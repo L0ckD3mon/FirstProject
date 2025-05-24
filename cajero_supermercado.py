@@ -13,17 +13,17 @@ Membership = {
 #Declarando algunas variables para despues
 total = 0
 car = []
-buying = False
+buying = True
 
 car.append(input(f"Actualmente tenemos {list(Products.keys())}, que desea: ".title()))
 
 #Bucle para llenar el carrito de compra
-while buying == False:
+while buying == True:
     car.append(input(f"Que mas desea? {list(Products.keys())} ".casefold()))
     keepBuying = input("Desea seguir comprando? ".casefold())
     
     if keepBuying == "no":
-        break
+        buying = False
 
 #Calcular el precio de todos los productos en el carrito
 while buying == False:
@@ -33,7 +33,7 @@ while buying == False:
         car.pop(0)
         if car == []:
             break
-
+            
 #Aplicando descuentos de membresias
 userMembership = input(f"Cual es su membresia? {list(Membership.keys())}".casefold())
 
